@@ -64,3 +64,4 @@ zsh: segmentation fault  nmap -sV -sC 127.0.0.1
 
 # Note
 Avant d'utiliser ce script, assurez vous que la commande que vous voulez utiliser soit installer sur votre machine. Pour cela, vous pouvez utiliser la commande list. Ensuit installer le si nécéssaire avec la commande install.
+
