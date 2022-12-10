@@ -5,9 +5,9 @@ Cependant, l'utilisation de ses commandes a quelle peu changer due à l'utilisat
 # Installation
 Afin de pouvoir utiliser le script, il est nécéssaire d'installer les paquets suivantes:
 
-apt install figlet
+```apt install figlet```
 
-apt install lolcat
+```apt install lolcat```
 
 # Usage
 
@@ -63,5 +63,5 @@ zsh: segmentation fault  nmap -sV -sC 127.0.0.1
 
 
 # Note
-Avant d'utiliser ce script, assurez vous que la commande que vous voulez utiliser soit installer sur votre machine. Pour cela, vous pouvez utiliser la commande list. Ensuit installer le si nécéssaire avec la commande install.
+Avant d'utiliser ce script, assurez vous que la commande que vous voulez utiliser soit installer sur votre machine. Pour cela, vous pouvez utiliser la commande **list**. Ensuit installer le si nécéssaire avec la commande **install**.
 
