@@ -46,7 +46,7 @@ usage: ./projet.sh		#Lancer le script
 	install			#Installer les commandes
 	
 	exec [commande]		#Execution des commandes
-	Example: exec nmap -sV -o target
+	Example: exec nmap -sV -sC target
 	
 Options:
 	help, --help		Afficher de l'aide
@@ -291,6 +291,7 @@ EOT
                         nmap)
 		#Définition des options de nmap
                 OPT_H=
+		OPT_O=
                 OPT_sV=
                 OPT_sC=
 		OPT_P=
@@ -300,6 +301,7 @@ EOT
                 for i in $arg3; do
                         case "$i" in
                                 -h|--help)      OPT_H="-h";;
+				-O)		OPT_O="-O";;
                                 -sV)    	OPT_sV="-sV";;
                                 -sC)    	OPT_sC="-sC";;
 				-p)		OPT_P="-p";;
@@ -308,7 +310,7 @@ EOT
 				*)		echo -e "${orangeclair}$i:${neutre} Option not implemented ";;
                         esac
                 done
-                eval "nmap $OPT_H $OPT_sV $OPT_sC $OPT_P $OPT_port $OPT_target"			#execution de nmap
+                eval "nmap $OPT_H $OPT_O $OPT_sV $OPT_sC $OPT_P $OPT_port $OPT_target"			#execution de nmap
                 ;;
 
         		gobuster)
@@ -402,19 +404,21 @@ EOT
                 OPT_wordlist=
                 OPT_U=
                 OPT_url=
+		OPT_V=
                 for h in $arg3; do
                         case "$h" in
                                 -h|--help)      OPT_H="-h";;
                                 -l)             OPT_l="-l";;
                                 -P)             OPT_P="-P";;
                                 -u)             OPT_U="-u";;
+				-v)		OPT_V="-v";;
                                 username)       OPT_username="$username";;
                                 wordlist)       OPT_wordlist="$wordlist";;
                                 url)            OPT_url="$url";;
 				*)		echo -e "${orangeclair}$i:${neutre} Option not implemented ";;
                         esac
                 done
-                eval " hydra $OPT_H $OPT_l $OPT_username $OPT_P $OPT_wordlist $OPT_U $OPT_url"		#execution de hydra
+                eval " hydra $OPT_H $OPT_l $OPT_username $OPT_P $OPT_wordlist $OPT_U $OPT_url $OPT_V"		#execution de hydra
                 ;;
 
 			dirb)
